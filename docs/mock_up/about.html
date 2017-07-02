@@ -20,7 +20,22 @@
     <main>
     <article>
     <h2>About</h2>
-    <p>Description stuff</p>
+    <h3>Background</h3>
+    <p>The Sentiment Analyzer compares the text input to the AFINN list. The AFINN list is a collection of words and phrases that have been rated with integer values ranging from negative five to positive five. It can be found here: <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">AFINN</a>.  Each word or phrase from the input that is found in the AFINN list is assigned an integer value. The Sentiment Analyzer sums the values to calculate a sentiment rating for each sentence and for the overall text. 
+    </p>
+    <h3>Interpreting Results</h3>
+    <p>Example 1:  "The cheers filled the room."<br>
+    This text returns a numeric value of 2, which is a positive sentiment.<br><br>
+    Example 2:  "Life is to be lived, not controlled; and humanity is won by continuing to play in face of certain defeat."<br>
+    This text returns a numeric value of 4, which is a positive sentiment.  The value of 4 is considered more positive than the value of 2 seen in Example 1.  
+    <br><br>
+    Example 3:  "There was an accident last night."<br>
+    This text returns a numeric value of –2, which is a negative sentiment.<br><br>
+    Example 4:  "The investigators accidentally destroyed the evidence."<br>
+    This text returns a numeric value of –5, which is a negative sentiment.  The value of –5 is considered more negative than the value of –2 seen in Example 3.<br><br>
+    Example 5:  "The crowd accidentally applauded at the show."  <br>
+    This text returns a numeric value of 0, which is considered a neutral sentiment.  <br>
+    </p>
     <p><a href="index.html">Back to Home Page</a></p>
     </article>
     </main>
