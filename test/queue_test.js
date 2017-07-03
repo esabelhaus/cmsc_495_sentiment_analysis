@@ -1,4 +1,5 @@
 var chai = require('chai'),
+    assert = chai.assert,
     expect = chai.expect,
     should = chai.should();
 
@@ -25,12 +26,10 @@ describe("QUEUE:TEST with a queue", function() {
         // finally, we enqueue the requested analysis job
         var current = 0;
         _queue.length('sentiment', function(err, res) {
-          console.log(res);
           current += res;
         });
         _queue.enqueue('sentiment', 'analyze', sentiments, function(res, err) {
           _queue.length('sentiment', function(erro, resp) {
-            console.log(resp);
             if (resp > current) {
               done();
             } else {
@@ -39,6 +38,25 @@ describe("QUEUE:TEST with a queue", function() {
           });
         });
       });
+    });
+  });
+});
+
+describe("QUEUE:TEST with a queue", function() {
+  it("doesn't enqueue a job when not connected", function(done) {
+    Q.queue({
+      "pkg": "ioredis",
+      "host": "127.0.0.1",
+      "password": null,
+      "port": 6379,
+      "database": 0
+    }, // this is the connection configuration for a queue
+    log_factory('debug'), // this is the logger
+    function(_queue) { // this is the callback which contains the actual queue
+      expect(function () {
+        _queue.enqueue('sentiment', 'analyze', sentiments)
+      }, TypeError, "Cannot read property 'sadd' of undefined");
+      done();
     });
   });
 });
