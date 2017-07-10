@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Will Donabedian">
+  <meta name="description" content="The Sentiment Analyzer provides users with feedback
+  regarding the sentiment of sample text that they input.">
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="shortcut icon" href="img/smiley.ico" type="image/favicon.ico">
+  <meta charset="utf-8">
+  <title>Sentiment Analyzer</title>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="cell">
+        <h1><a href="index.html"><img class="logo" src="img/sentiment_app_logo.png" alt="Sentiment Analyzer Logo"></a></h1>
+      </div>
+    </div>
+    <div class="top-bar" id="responsive-menu">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-x">
+      <div class="cell">
+        <h2>Welcome</h2>
+        <p>Welcome to the Sentiment Analyzer. You can input text that you've created or found elsewhere, and we will tell you the sentiment.  Enter your text below.</p>
+        <div id="flash"></div>
+        <form>
+          <textarea name="input" rows="15" cols="125">Enter text here</textarea><br>
+          <input type="button" onclick="analyzeInput()" id="submit" value="Analyze">
+        </form>
+        <ul id="output">
+          <!-- intentionally left blank to be filled with data -->
+        </ul>
+      </div>
+    </div>
+    <div class="grid-x">
+      <div class="cell">
+        <p>©Copyright 2017 by The Sentimental Group. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/analyze.js"></script>
+    <script src="js/foundation.min.js"></script>
+  </div>
+
+  </body>
+</html>
