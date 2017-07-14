@@ -8,10 +8,6 @@ var express = require('express'),
   // follow strict JavaScript syntax rules
   "use strict";
 
-  // use bodyParser to retrieve the JSON body if a request in a consistent manner
-  app.use(bodyParser.json());
-  // configure bodyParser further for url encoding
-  app.use(bodyParser.urlencoded({ extended: false }));
   // allow sessions to persist using cookies on request so that user sessions are not mixed up
   app.use(cookieParser());
 
