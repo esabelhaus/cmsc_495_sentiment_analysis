@@ -30,7 +30,7 @@
 
         <h2>About</h2>
         <h3>Background</h3>
-        <p>The Sentiment Analyzer compares the text input to the AFINN list. The AFINN list is a collection of words and phrases that have been rated with integer values ranging from negative five to positive five. It can be found here: <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">AFINN</a>.  Each word or phrase from the input that is found in the AFINN list is assigned an integer value. The Sentiment Analyzer sums the values to calculate a sentiment rating for each sentence and for the overall text. 
+        <p>The Sentiment Analyzer application compares the user’s text input to an existing list of words and phrases, which were assigned a numeric sentiment value.  If words or phrases from the input are found in the list, they receive the associated numeric value from the list.  If the words are not in the list, they do not receive a value.  All of the values for each sentence are summed to determine a sentiment value for each line.  For input of multiple lines separated by a return, the overall sentiment value is calculated by averaging the values of all words and phrases from the input that were found in the list.
         </p>
         <h3>Interpreting Results</h3>
         <p>Example 1:  "The cheers filled the room."<br>
@@ -44,6 +44,9 @@
           This text returns a numeric value of –5, which is a negative sentiment.  The value of –5 is considered more negative than the value of –2 seen in Example 3.<br><br>
           Example 5:  "The crowd accidentally applauded at the show."  <br>
           This text returns a numeric value of 0, which is considered a neutral sentiment.  <br>
+        </p>
+        <h3>For More Information</h3>
+        <p>The list of words and phrases used as part of the Sentiment Analyzer is known as the <a href="http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010">AFINN</a> list.  The AFINN list is a collection of words, phrases, and emojis that have been rated with integer values ranging from negative five to positive five.
         </p>
       </div>
       <div class="grid-x">
