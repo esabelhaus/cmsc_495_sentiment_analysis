@@ -21,7 +21,7 @@ function analyzeInput() {
       }
     });
   }
-};
+}
 
 function displayOutput(data) {
   "use strict";
@@ -42,7 +42,7 @@ function displayOutput(data) {
   });
 
   $('html, body').animate({ scrollTop: $("#output").offset().top }, 2000);
-};
+}
 
 function displayError(message) {
   "use strict";
@@ -53,4 +53,4 @@ function displayError(message) {
       $(this).delay(2500).fadeOut();
     });
   });
-};
+}
