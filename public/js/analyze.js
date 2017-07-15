@@ -25,17 +25,32 @@ function analyzeInput() {
 
 function displayOutput(data) {
   "use strict";
-  alert(data);
-}
+
+  $('#success').text("Sentiment Processed Successfully");
+  $(function() {
+    $('#success').delay(500).fadeIn('normal', function() {
+      $(this).delay(2500).fadeOut();
+    });
+  });
+
+  $('#output').empty();
+
+  $('#output').append($('<li>').text('Overall Sentiment Score: ' + data.overall));
+
+  $.each(data.processed_sentiments, function(n) {
+    $('#output').append($('<li>').text(data.processed_sentiments[n].score + ', ' + data.processed_sentiments[n].sentence));
+  });
+
+  $('html, body').animate({ scrollTop: $("#output").offset().top }, 2000);
+};
 
 function displayError(message) {
   "use strict";
 
-  console.log(message);
   $('#flash').text(message);
   $(function() {
     $('#flash').delay(500).fadeIn('normal', function() {
       $(this).delay(2500).fadeOut();
     });
   });
-}
+};
