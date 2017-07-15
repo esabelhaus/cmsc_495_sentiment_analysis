@@ -2,6 +2,7 @@ var express = require('express'),
     app = express(),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
+    expressValidator = require('express-validator'),
     SentimentApp = require('./lib/sentiment_app');
 
 (function() {
@@ -14,7 +15,9 @@ var express = require('express'),
   // serve up content which exists in the public folder
   app.use(express.static('public'));
 
-  app.set('view engine', 'pug');
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(expressValidator());
 
   // invoke SentimentApp and integrate functionality into Express app
   var sentimental = new SentimentApp(app, 'config.json');

@@ -1,6 +1,10 @@
 function analyzeInput() {
   "use strict";
 
+  var req_data = JSON.stringify({
+    "text": $('textarea').val().split('\n')
+  });
+
   if($('textarea').val().length === 0) {
     displayError('Please input some text, then submit again');
   } else {
@@ -10,7 +14,7 @@ function analyzeInput() {
       async: true,
       dataType: 'json',
       contentType: 'application/json',
-      data: $('textarea').val().split('\n'),
+      data: req_data,
       success: displayOutput,
       error: function(err) {
         displayError(err.responseText);
