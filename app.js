@@ -14,9 +14,10 @@ var express = require('express'),
 
   // serve up content which exists in the public folder
   app.use(express.static('public'));
-
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json({ limit: '100mb' }));
+  app.use(bodyParser.urlencoded({ extended: false, limit: '100mb' }));
+  //app.use(express.json({limit: '100mb'}));
+  //app.use(express.urlencoded({limit: '100mb'}));
   app.use(expressValidator());
 
   // invoke SentimentApp and integrate functionality into Express app
